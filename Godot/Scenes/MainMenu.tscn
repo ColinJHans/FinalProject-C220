@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[sub_resource type="AnimatedTexture" id=1]
+[ext_resource path="res://Assets/start-placeholder-2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/options placeholder.png" type="Texture" id=2]
+[ext_resource path="res://Assets/placeholder-caveman.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/quit-placeholder.png" type="Texture" id=4]
 
 [node name="Main Menu" type="MarginContainer"]
 anchor_right = 1.0
@@ -9,30 +12,55 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 660.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 660.0
 
-[node name="Right Side" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 1.0
-margin_bottom = 600.0
+[node name="Left Side" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 240.0
+margin_bottom = 660.0
 
-[node name="Start New Game" type="TextureRect" parent="HBoxContainer/Right Side"]
-margin_right = 1.0
-margin_bottom = 1.0
-texture = SubResource( 1 )
+[node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/Left Side"]
+margin_right = 240.0
+margin_bottom = 660.0
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/Right Side"]
-margin_top = 5.0
-margin_right = 1.0
-margin_bottom = 5.0
+[node name="Start New Game" type="TextureRect" parent="HBoxContainer/Left Side/MenuOptions"]
+margin_top = 225.0
+margin_right = 240.0
+margin_bottom = 249.0
+texture = ExtResource( 1 )
+stretch_mode = 1
 
-[node name="Quit" type="TextureRect" parent="HBoxContainer/Right Side"]
-margin_top = 9.0
-margin_right = 1.0
-margin_bottom = 9.0
+[node name="Options" type="TextureRect" parent="HBoxContainer/Left Side/MenuOptions"]
+margin_top = 279.0
+margin_right = 240.0
+margin_bottom = 303.0
+texture = ExtResource( 2 )
 
-[node name="Left Side" type="CenterContainer" parent="HBoxContainer"]
-margin_left = 5.0
-margin_right = 5.0
-margin_bottom = 600.0
+[node name="Quit" type="TextureRect" parent="HBoxContainer/Left Side/MenuOptions"]
+margin_top = 333.0
+margin_right = 240.0
+margin_bottom = 434.0
+texture = ExtResource( 4 )
+
+[node name="Right side" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 244.0
+margin_right = 1024.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Logo" type="TextureRect" parent="HBoxContainer/Right side"]
+margin_left = 240.0
+margin_top = 142.0
+margin_right = 540.0
+margin_bottom = 517.0
+texture = ExtResource( 3 )
