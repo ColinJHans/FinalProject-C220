@@ -1,5 +1,6 @@
 extends Area2D
 
+onready var global = get_node("/root/Global")
 
 func _ready():
 	pass
