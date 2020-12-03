@@ -10,9 +10,12 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		if Global.level == 1:
+		if name == "Portal_to_2":
+			Global.level = 2
 			get_tree().change_scene("res://Scenes/Level2.tscn")
-		if Global.level == 2:
+		if name == "Portal_to_3":
+			Global.level = 3
 			get_tree().change_scene("res://Scenes/Level3.tscn")
-		if Global.level == 3:
-			get_tree().change_scene("res://Scenes/Game_Over.tscn")
+		if name == "End_Portal":
+			Global.level = 4
+			get_tree().change_scene("res://Scenes/Level1.tscn")

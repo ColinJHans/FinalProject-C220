@@ -43,15 +43,15 @@ cell_custom_transform = Transform2D( 50, 0, 0, 50, 0, 0 )
 collision_layer = 2
 format = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Portal_to_2" type="Area2D" parent="."]
 position = Vector2( 4105.24, 49.1158 )
 collision_layer = 2
 script = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_to_2"]
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="Area2D"]
+[node name="Sprite" type="Sprite" parent="Portal_to_2"]
 position = Vector2( 0.353516, -0.353622 )
 scale = Vector2( 0.352998, 0.352998 )
 texture = ExtResource( 8 )
@@ -86,4 +86,4 @@ color = Color( 0, 0, 0, 1 )
 stream = ExtResource( 5 )
 volume_db = -25.0
 autoplay = true
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Portal_to_2" to="Portal_to_2" method="_on_Area2D_body_entered"]
