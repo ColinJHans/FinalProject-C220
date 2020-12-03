@@ -65,10 +65,11 @@ func _unhandled_input(event):
 		direction = 1
 	if event.is_action_pressed("right") and is_on_floor() == true:
 		$Walk.play()
-	if event.is_action_released("left"):
+	if event.is_action_released("left") or is_on_floor() == false:
 		$Walk.stop()
-	if event.is_action_released("right"):
+	if event.is_action_released("right") or is_on_floor() == false:
 		$Walk.stop()
+
 
 func is_on_right_wall():
 	if $Wall/Right.is_colliding():

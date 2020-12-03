@@ -15,4 +15,4 @@ func _on_Area2D_body_entered(body):
 		if Global.level == 2:
 			get_tree().change_scene("res://Scenes/Level3.tscn")
 		if Global.level == 3:
-			get_tree().change_scene("res://Scenes/Game Over.tscn")
+			get_tree().change_scene("res://Scenes/Game_Over.tscn")
