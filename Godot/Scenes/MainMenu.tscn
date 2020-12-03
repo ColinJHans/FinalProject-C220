@@ -8,7 +8,6 @@
 [ext_resource path="res://Sounds/FinalTheme.ogg" type="AudioStream" id=6]
 
 [node name="Main Menu" type="MarginContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
