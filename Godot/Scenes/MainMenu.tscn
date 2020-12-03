@@ -86,6 +86,7 @@ texture = ExtResource( 3 )
 
 [node name="Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = -20.0
 [connection signal="pressed" from="HBoxContainer/Left Side/MenuOptions/Start New Game/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/Left Side/MenuOptions/Start New Game/StartButton" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Left Side/MenuOptions/Quit/QuitButton" to="." method="_on_QuitButton_pressed"]
