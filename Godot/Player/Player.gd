@@ -21,7 +21,8 @@ var moving = false
 var is_jumping = false
 var double_jumped = false
 
-var death_pit_pos = 1020
+var death_pit_pos = 1400
+
 
 func _physics_process(_delta):
 	velocity.x = clamp(velocity.x,-max_move,max_move)
@@ -81,3 +82,5 @@ func is_on_left_wall():
 
 func die():
 	queue_free()
+
+
