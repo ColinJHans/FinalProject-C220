@@ -21,7 +21,7 @@ var moving = false
 var is_jumping = false
 var double_jumped = false
 
-
+var death_pit_pos = 1020
 
 func _physics_process(_delta):
 	velocity.x = clamp(velocity.x,-max_move,max_move)
@@ -31,6 +31,9 @@ func _physics_process(_delta):
 	
 	if is_on_floor():
 		double_jumped = false
+	
+	if position.y >= death_pit_pos:
+		die()
 
 func is_moving():
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
