@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var SM = $StateMachine
 
+
 var velocity = Vector2.ZERO
 var jump_power = Vector2.ZERO
 var direction = 1
@@ -86,4 +87,5 @@ func die():
 
 func do_damage(d):
 	queue_free()
+
 
