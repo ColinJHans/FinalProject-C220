@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/spike.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/ThemeSong.ogg" type="AudioStream" id=3]
 
 [node name="Underwater Level" type="Node2D"]
 
@@ -49,3 +50,6 @@ texture = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spike3"]
 position = Vector2( 600, 348 )
 polygon = PoolVector2Array( 5.87683, -4.14435, 47.8768, 1.85565, 23.8768, 39.8557 )
+
+[node name="Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
