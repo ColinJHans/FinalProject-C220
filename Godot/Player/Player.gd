@@ -43,12 +43,6 @@ func is_moving():
 func move_vector():
 	return Vector2(Input.get_action_strength("right") - Input.get_action_strength("left"),1.0)
 
-func _unhandled_input(event):
-	if event.is_action_pressed("left"):
-		direction = -1
-	if event.is_action_pressed("right"):
-		direction = 1
-
 func set_animation(anim):
 	if $AnimatedSprite.animation == anim: return
 	if $AnimatedSprite.frames.has_animation(anim): $AnimatedSprite.play(anim)
@@ -60,6 +54,20 @@ func is_on_floor():
 		if f.is_colliding():
 			return true
 	return false
+
+func _unhandled_input(event):
+	if event.is_action_pressed("left"):
+		direction = -1
+	if event.is_action_pressed("left") and is_on_floor() == true:
+		$Walk.play()
+	if event.is_action_pressed("right"):
+		direction = 1
+	if event.is_action_pressed("right") and is_on_floor() == true:
+		$Walk.play()
+	if event.is_action_released("left"):
+		$Walk.stop()
+	if event.is_action_released("right"):
+		$Walk.stop()
 
 func is_on_right_wall():
 	if $Wall/Right.is_colliding():
