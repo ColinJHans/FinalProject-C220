@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/spike.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/FinalTheme.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Player/Player.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/UWPlayer_Container.gd" type="Script" id=5]
 [ext_resource path="res://Assets/cavetileset.png" type="Texture" id=6]
 [ext_resource path="res://Assets/cavetilesetunderwater.png" type="Texture" id=7]
@@ -868,3 +869,5 @@ script = ExtResource( 5 )
 spawn_location = Vector2( 50, 100 )
 
 [node name="Player" type="KinematicBody2D" parent="Player_Container"]
+input_pickable = true
+script = ExtResource( 4 )
