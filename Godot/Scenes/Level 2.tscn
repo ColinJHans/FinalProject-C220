@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Area.gd" type="Script" id=7]
 [ext_resource path="res://Assets/portal.png" type="Texture" id=8]
 [ext_resource path="res://Assets/cavetilesetunderwater.png" type="Texture" id=9]
+[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 50, 0, 50, 50, 0, 50 )
@@ -204,6 +205,11 @@ cell_size = Vector2( 50, 50 )
 cell_custom_transform = Transform2D( 50, 0, 0, 50, 0, 0 )
 collision_layer = 2
 format = 1
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+
+[node name="Bat" parent="Enemy_Container" instance=ExtResource( 10 )]
+position = Vector2( 656.9, -85.6991 )
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 3 )
