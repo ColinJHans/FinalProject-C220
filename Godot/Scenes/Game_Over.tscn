@@ -62,6 +62,9 @@ focus_neighbour_top = NodePath("../Play_Again")
 focus_previous = NodePath("../Play_Again")
 custom_fonts/font = SubResource( 1 )
 text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label2" type="Label" parent="."]
 anchor_top = -0.00333494

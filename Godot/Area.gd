@@ -18,4 +18,4 @@ func _on_Area2D_body_entered(body):
 			get_tree().change_scene("res://Scenes/Level3.tscn")
 		if name == "End_Portal":
 			Global.level = 4
-			get_tree().change_scene("res://Scenes/Level1.tscn")
+			get_tree().change_scene("res://Scenes/Game_Over.tscn")
