@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/background3.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Sounds/FinalTheme.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/tileset.tres" type="TileSet" id=8]
 [ext_resource path="res://Sounds/CaveCollapse2.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 41.8868
@@ -16,16 +17,19 @@ radius = 41.8868
 [node name="Level3" type="Node2D"]
 
 [node name="background2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 2767.52, -48.8546 )
 scale = Vector2( 5.69657, 11.3129 )
 texture = ExtResource( 2 )
 
 [node name="background4" type="Sprite" parent="."]
-position = Vector2( 1736.52, -48.8546 )
+visible = false
+position = Vector2( 1736.52, -44.0276 )
 scale = Vector2( 5.69657, 11.3129 )
 texture = ExtResource( 2 )
 
 [node name="background3" type="Sprite" parent="."]
+visible = false
 position = Vector2( 8460.97, -46.9043 )
 scale = Vector2( 5.69657, 11.3129 )
 texture = ExtResource( 2 )
@@ -98,4 +102,19 @@ shape = SubResource( 1 )
 position = Vector2( 0.353516, -0.353622 )
 scale = Vector2( 0.352998, 0.352998 )
 texture = ExtResource( 3 )
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+position = Vector2( 2326.64, -392.607 )
+
+[node name="Bat" parent="Enemy_Container" instance=ExtResource( 10 )]
+
+[node name="Enemy_Container2" type="Node2D" parent="."]
+position = Vector2( 1731.39, 902.1 )
+
+[node name="Bat" parent="Enemy_Container2" instance=ExtResource( 10 )]
+
+[node name="Enemy_Container4" type="Node2D" parent="."]
+position = Vector2( 4240.25, 680.821 )
+
+[node name="Bat" parent="Enemy_Container4" instance=ExtResource( 10 )]
 [connection signal="body_entered" from="End_Portal" to="End_Portal" method="_on_Area2D_body_entered"]

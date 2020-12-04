@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/UWPlayer_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/background3.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Assets/tileset.tres" type="TileSet" id=7]
 [ext_resource path="res://Sounds/FinalTheme.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Assets/cavetilesetunderwater.png" type="Texture" id=9]
-[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sounds/PourSound.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Sounds/CaveCollapse1.ogg" type="AudioStream" id=12]
 
@@ -149,9 +148,6 @@ collision_layer = 2
 format = 1
 
 [node name="Enemy_Container" type="Node2D" parent="."]
-
-[node name="Bat" parent="Enemy_Container" instance=ExtResource( 10 )]
-position = Vector2( 656.9, -85.6991 )
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 1 )
