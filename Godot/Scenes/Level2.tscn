@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/UWPlayer_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/background3.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Sounds/CaveCollapse1.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Scenes/Drown.gd" type="Script" id=13]
 [ext_resource path="res://Sounds/Bubble1.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Enemies/Bat2.gd" type="Script" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "cavetilesetunderwater.png 0"
@@ -270,9 +271,11 @@ texture = ExtResource( 3 )
 position = Vector2( 1814.97, 668.773 )
 
 [node name="Bat" parent="Node2D" instance=ExtResource( 10 )]
+script = ExtResource( 15 )
 
 [node name="Node2D2" type="Node2D" parent="."]
 position = Vector2( 216, 648 )
 
 [node name="Bat" parent="Node2D2" instance=ExtResource( 10 )]
+script = ExtResource( 15 )
 [connection signal="body_entered" from="Portal_to_3" to="Portal_to_3" method="_on_Area2D_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/background3.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/tileset.tres" type="TileSet" id=8]
 [ext_resource path="res://Sounds/CaveCollapse2.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Enemies/Bat2.gd" type="Script" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 41.8868
@@ -104,14 +105,17 @@ texture = ExtResource( 3 )
 position = Vector2( 2326.64, -392.607 )
 
 [node name="Bat" parent="Enemy_Container" instance=ExtResource( 10 )]
+script = ExtResource( 11 )
 
 [node name="Enemy_Container2" type="Node2D" parent="."]
 position = Vector2( 1731.39, 902.1 )
 
 [node name="Bat" parent="Enemy_Container2" instance=ExtResource( 10 )]
+script = ExtResource( 11 )
 
 [node name="Enemy_Container4" type="Node2D" parent="."]
 position = Vector2( 4240.25, 680.821 )
 
 [node name="Bat" parent="Enemy_Container4" instance=ExtResource( 10 )]
+script = ExtResource( 11 )
 [connection signal="body_entered" from="End_Portal" to="End_Portal" method="_on_Area2D_body_entered"]
