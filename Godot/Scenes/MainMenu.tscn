@@ -43,7 +43,7 @@ stretch_mode = 1
 
 [node name="StartButton" type="Button" parent="HBoxContainer/Left Side/MenuOptions/Start New Game"]
 margin_right = 240.0
-margin_bottom = 20.0
+margin_bottom = 95.0
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false

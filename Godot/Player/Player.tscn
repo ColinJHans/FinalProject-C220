@@ -298,7 +298,6 @@ script = ExtResource( 12 )
 wait_time = 0.25
 
 [node name="Light" parent="." instance=ExtResource( 10 )]
-visible = false
 
 [node name="Walk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
