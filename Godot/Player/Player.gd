@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 onready var SM = $StateMachine
 
-
+var timer = null
+var health = 100
 var velocity = Vector2.ZERO
 var jump_power = Vector2.ZERO
 var direction = 1
@@ -87,5 +88,17 @@ func die():
 
 func do_damage(d):
 	queue_free()
+
+func health_decrement():
+	health -= 25
+
+
+
+func _ready():
+	timer = Timer.new()
+	timer.set_one_shot(false)
+	timer.set_wait_time(0.25)
+	timer.connect("timeout", self, "health_decrement")
+	add_child(timer)
 
 
