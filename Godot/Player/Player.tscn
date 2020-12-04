@@ -302,7 +302,7 @@ visible = false
 
 [node name="Walk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = -33.333
+volume_db = -25.0
 [connection signal="body_entered" from="Area2D" to="StateMachine/Attack" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="StateMachine/Coyote/Timer" to="StateMachine/Coyote" method="_on_Timer_timeout"]
 [connection signal="timeout" from="StateMachine/Attack/Timer" to="StateMachine/Attack" method="_on_Timer_timeout"]
