@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/UWPlayer_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/background3.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Assets/cavetilesetunderwater.png" type="Texture" id=9]
 [ext_resource path="res://Sounds/PourSound.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Sounds/CaveCollapse1.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/Drown.gd" type="Script" id=13]
+[ext_resource path="res://Sounds/Bubble1.ogg" type="AudioStream" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "cavetilesetunderwater.png 0"
@@ -98,7 +100,10 @@
 5/shapes = [  ]
 5/z_index = 0
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 215.986, 136.528 )
+
+[sub_resource type="CircleShape2D" id=3]
 radius = 41.8868
 
 [node name="Level2" type="Node2D"]
@@ -112,7 +117,7 @@ drag_margin_v_enabled = true
 script = ExtResource( 4 )
 
 [node name="background3" type="Sprite" parent="."]
-position = Vector2( 1026.77, 597.968 )
+position = Vector2( 1030.64, 597.279 )
 scale = Vector2( 3.2203, 10.2662 )
 texture = ExtResource( 2 )
 
@@ -131,6 +136,76 @@ cell_size = Vector2( 50, 50 )
 collision_layer = 4
 format = 1
 tile_data = PoolIntArray( 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 327691, 2, 0, 327692, 2, 0, 327693, 2, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 393235, 2, 0, 393236, 2, 0, 393237, 2, 0, 393238, 2, 0, 393239, 2, 0, 458771, 3, 0, 458772, 3, 0, 458773, 3, 0, 458774, 3, 0, 458775, 3, 0, 524307, 3, 0, 524308, 3, 0, 524309, 3, 0, 524310, 3, 0, 524311, 3, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 3, 0, 589843, 4, 0, 589844, 4, 0, 589845, 4, 0, 589846, 4, 0, 589847, 4, 0, 655374, 0, 0, 655375, 1, 0, 655376, 1, 0, 655377, 3, 0, 655378, 3, 0, 655379, 5, 0, 655380, 5, 0, 655381, 5, 0, 655382, 5, 0, 655383, 5, 0, 720909, 0, 0, 720910, 1, 0, 720911, 1, 0, 720912, 3, 0, 720913, 3, 0, 720914, 3, 0, 720915, 5, 0, 720916, 5, 0, 720917, 5, 0, 720918, 5, 0, 720919, 5, 0, 786444, 0, 0, 786445, 1, 0, 851980, 1, 0, 851981, 1, 0, 917515, 1, 0, 917516, 1, 0, 983051, 1, 0, 983052, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1114123, 1, 0, 1114124, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1310731, 1, 0, 1310732, 1, 0, 1376267, 1, 0, 1376268, 1, 0, 1441806, 3, 0, 1441807, 3, 0, 1507342, 3, 0, 1507343, 3, 0, 1572878, 3, 0, 1572879, 3, 0 )
+
+[node name="Area2D" type="Area2D" parent="Water"]
+collision_layer = 2
+
+[node name="WaterZone" type="CollisionShape2D" parent="Water/Area2D"]
+position = Vector2( 335.451, 294.609 )
+shape = SubResource( 2 )
+script = ExtResource( 13 )
+
+[node name="bubbles" type="AudioStreamPlayer" parent="Water/Area2D/WaterZone"]
+stream = ExtResource( 14 )
+volume_db = -25.0
+
+[node name="WaterZone2" type="CollisionShape2D" parent="Water/Area2D"]
+position = Vector2( 581.068, 346.672 )
+shape = SubResource( 2 )
+script = ExtResource( 13 )
+
+[node name="bubbles" type="AudioStreamPlayer" parent="Water/Area2D/WaterZone2"]
+stream = ExtResource( 14 )
+volume_db = -25.0
+
+[node name="WaterZone3" type="CollisionShape2D" parent="Water/Area2D"]
+position = Vector2( 973.801, 458.268 )
+shape = SubResource( 2 )
+script = ExtResource( 13 )
+
+[node name="bubbles" type="AudioStreamPlayer" parent="Water/Area2D/WaterZone3"]
+stream = ExtResource( 14 )
+volume_db = -25.0
+
+[node name="WaterZone4" type="CollisionShape2D" parent="Water/Area2D"]
+position = Vector2( 601.196, 836.551 )
+scale = Vector2( 0.25, 2 )
+shape = SubResource( 2 )
+script = ExtResource( 13 )
+
+[node name="bubbles" type="AudioStreamPlayer" parent="Water/Area2D/WaterZone4"]
+stream = ExtResource( 14 )
+volume_db = -25.0
+
+[node name="WaterZone5" type="CollisionShape2D" parent="Water/Area2D"]
+position = Vector2( 707.207, 588.204 )
+scale = Vector2( 0.25, 1 )
+shape = SubResource( 2 )
+script = ExtResource( 13 )
+
+[node name="bubbles" type="AudioStreamPlayer" parent="Water/Area2D/WaterZone5"]
+stream = ExtResource( 14 )
+volume_db = -25.0
+
+[node name="WaterZone6" type="CollisionShape2D" parent="Water/Area2D"]
+position = Vector2( 1414.17, 1188.47 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 2 )
+script = ExtResource( 13 )
+
+[node name="bubbles" type="AudioStreamPlayer" parent="Water/Area2D/WaterZone6"]
+stream = ExtResource( 14 )
+volume_db = -25.0
+
+[node name="WaterZone7" type="CollisionShape2D" parent="Water/Area2D"]
+position = Vector2( 737.063, 1370 )
+scale = Vector2( 1, 2 )
+shape = SubResource( 2 )
+script = ExtResource( 13 )
+
+[node name="bubbles" type="AudioStreamPlayer" parent="Water/Area2D/WaterZone7"]
+stream = ExtResource( 14 )
+volume_db = -25.0
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 7 )
@@ -162,7 +237,7 @@ autoplay = true
 
 [node name="WaterNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = -30.0
+volume_db = -35.0
 autoplay = true
 
 [node name="Crumbling" type="AudioStreamPlayer" parent="."]
@@ -178,10 +253,12 @@ script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_to_3"]
 position = Vector2( -135.416, 99.7805 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Portal_to_3"]
 position = Vector2( -117.244, 102.991 )
 scale = Vector2( 0.352998, 0.352998 )
 texture = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="."]
 [connection signal="body_entered" from="Portal_to_3" to="Portal_to_3" method="_on_Area2D_body_entered"]

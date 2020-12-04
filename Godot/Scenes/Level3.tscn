@@ -17,19 +17,16 @@ radius = 41.8868
 [node name="Level3" type="Node2D"]
 
 [node name="background2" type="Sprite" parent="."]
-visible = false
 position = Vector2( 2767.52, -48.8546 )
 scale = Vector2( 5.69657, 11.3129 )
 texture = ExtResource( 2 )
 
 [node name="background4" type="Sprite" parent="."]
-visible = false
 position = Vector2( 1736.52, -44.0276 )
 scale = Vector2( 5.69657, 11.3129 )
 texture = ExtResource( 2 )
 
 [node name="background3" type="Sprite" parent="."]
-visible = false
 position = Vector2( 8460.97, -46.9043 )
 scale = Vector2( 5.69657, 11.3129 )
 texture = ExtResource( 2 )
