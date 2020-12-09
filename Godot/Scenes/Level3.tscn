@@ -100,11 +100,6 @@ position = Vector2( 0.353516, -0.353622 )
 scale = Vector2( 0.352998, 0.352998 )
 texture = ExtResource( 3 )
 
-[node name="Enemy_Container" type="Node2D" parent="."]
-position = Vector2( 2326.64, -392.607 )
-
-[node name="Bat" parent="Enemy_Container" instance=ExtResource( 10 )]
-
 [node name="Enemy_Container2" type="Node2D" parent="."]
 position = Vector2( 1731.39, 902.1 )
 
