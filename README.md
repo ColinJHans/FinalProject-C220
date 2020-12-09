@@ -1,4 +1,4 @@
-# The Cave of Pressure?
+# The Cave of Pressure
 MSCH-C220 Game Jam, December 2020
 
 ## Theme
